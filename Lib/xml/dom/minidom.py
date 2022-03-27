@@ -302,7 +302,7 @@ def _in_document(node):
 
 def _write_data(writer, data):
     "Writes datachars to writer."
-    if data:
+    if data and type(data) is str:
         data = data.replace("&", "&amp;").replace("<", "&lt;"). \
                     replace("\"", "&quot;").replace(">", "&gt;")
         writer.write(data)
